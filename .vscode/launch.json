@@ -1,0 +1,24 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+            {
+            "name": "Cortex Debug OpenOCD",
+            "preLaunchTask": "rust: cargo build",
+            "cwd": "${workspaceRoot}",
+            "executable": "./target/thumbv7m-none-eabi/debug/f103_uart2can_rs",
+            "device": "STM32F103C8T6",
+            "runToMain": true,
+            "request": "launch",
+            "type": "cortex-debug",
+            "armToolchainPath": "/usr/bin/",
+            "servertype": "openocd",
+            "configFiles": [
+                "${workspaceRoot}/.vscode/openocd.cfg"
+            ],
+            "svdFile": "${workspaceRoot}/.vscode/STM32F103.svd"
+        }
+    ]
+}
